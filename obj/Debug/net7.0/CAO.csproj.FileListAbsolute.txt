@@ -1,0 +1,14 @@
+C:\Users\yassine\Desktop\CAO\bin\Debug\net7.0\CAO.exe
+C:\Users\yassine\Desktop\CAO\bin\Debug\net7.0\CAO.deps.json
+C:\Users\yassine\Desktop\CAO\bin\Debug\net7.0\CAO.runtimeconfig.json
+C:\Users\yassine\Desktop\CAO\bin\Debug\net7.0\CAO.dll
+C:\Users\yassine\Desktop\CAO\bin\Debug\net7.0\CAO.pdb
+C:\Users\yassine\Desktop\CAO\obj\Debug\net7.0\CAO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yassine\Desktop\CAO\obj\Debug\net7.0\CAO.AssemblyInfoInputs.cache
+C:\Users\yassine\Desktop\CAO\obj\Debug\net7.0\CAO.AssemblyInfo.cs
+C:\Users\yassine\Desktop\CAO\obj\Debug\net7.0\CAO.csproj.CoreCompileInputs.cache
+C:\Users\yassine\Desktop\CAO\obj\Debug\net7.0\CAO.dll
+C:\Users\yassine\Desktop\CAO\obj\Debug\net7.0\refint\CAO.dll
+C:\Users\yassine\Desktop\CAO\obj\Debug\net7.0\CAO.pdb
+C:\Users\yassine\Desktop\CAO\obj\Debug\net7.0\CAO.genruntimeconfig.cache
+C:\Users\yassine\Desktop\CAO\obj\Debug\net7.0\ref\CAO.dll
