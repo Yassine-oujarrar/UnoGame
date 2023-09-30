@@ -2,31 +2,22 @@ using System;
 
 public class Joueur
 {
-    public static int NombreDeJoueur = 0;
-    public string Fn;
-    public string Ln;
-    public int ID;
+    public Cartes[] cartes;
+    private string Fn;
+    private string Ln;
+    private int ID;
 
-    public Joueur()
+    public Joueur(int idJoueur)
     {
         // Demander au joueur d'entrer son prénom (Fn) et son nom de famille (Ln)
         Console.Write("Entrez votre prénom : ");
-        this.Fn = Console.ReadLine();
+        this.Fn = Console.ReadLine() ?? "";
         Console.Write("Entrez votre nom de famille : ");
-        this.Ln = Console.ReadLine();
-
-        // Incrémenter le nombre total de joueurs
-        NombreDeJoueur++;
-
+        this.Ln = Console.ReadLine() ?? "";
         // Affecter un ID au joueur
-        this.ID = NombreDeJoueur;
+        this.ID = idJoueur;
+        this.cartes = new Cartes[8];
     }
-
-    public static int GetNombreDeJoueur()
-    {
-        return NombreDeJoueur;
-    }
-
     public string GetFn()
     {
         return Fn;
@@ -41,13 +32,4 @@ public class Joueur
     {
         return ID;
     }
-    public static Joueur[] CreerJoueurs(int nombreDeJoueurs)
-{
-    Joueur[] joueurs = new Joueur[nombreDeJoueurs];
-    for (int i = 0; i < nombreDeJoueurs; i++)
-    {
-        joueurs[i] = new Joueur();
-    }
-    return joueurs;
-}
 }
