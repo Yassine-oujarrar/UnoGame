@@ -1,5 +1,5 @@
 using System;
-public class Cartes
+public class Carte
 {
     public enum Valeur
     {
@@ -15,37 +15,37 @@ public class Cartes
     private readonly Type type;
 
 
-    public Cartes(Valeur valeur, Type type)
+    public Carte(Valeur valeur, Type type)
     {
         this.valeur = valeur;
         this.type = type;
     }
 
-    public Valeur GetValeur()
+    public Valeur getValeur()
     {
         return this.valeur;
     }
 
-    public Type GetCarteType()
+    public Type getCarteType()
     {
         return this.type;
     }
 
     public override string ToString()
     {
-        return valeur + " de " + type;
+        return this.valeur + " de " + this.type;
     }
     
-    public static List<Cartes> CreerPaquetDeCartes()
+    public static List<Carte> CreerPaquetDeCartes()
     {
-        List<Cartes> paquet = new List<Cartes>();
+        List<Carte> paquet = new List<Carte>();
         for(int i=0; i<4; i++)
         {
-            Cartes.Type type =(Cartes.Type)i;
+            Carte.Type type =(Carte.Type)i;
             for(int j=0; j<13; j++)
             {
-                Cartes.Valeur valeur=(Cartes.Valeur)j;
-                paquet.Add(new Cartes(valeur, type));
+                Carte.Valeur valeur=(Carte.Valeur)j;
+                paquet.Add(new Carte(valeur, type));
             }
         }
         return paquet;
