@@ -8,7 +8,7 @@ namespace JeuCarte // Note: actual namespace depends on the project name.
         {
 
 
-                    // Créez un paquet de cartes en utilisant la méthode CreerPaquetDeCartes
+        // Créez un paquet de cartes en utilisant la méthode CreerPaquetDeCartes
         List<Carte> paquetDeCartes = Carte.CreerPaquetDeCartes();
 
         /* Affichez les cartes du paquet
