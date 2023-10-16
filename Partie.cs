@@ -7,7 +7,7 @@ public class Partie
 
     private int idJoueurEnCours;
 
-    public Partie(int nombreDeJoueurs)
+    public Partie(int nombreDeJoueurs) // Constructeur de la classe Partie
     {
         Joueur[] localJoueurs = new Joueur[nombreDeJoueurs];
         for (int i = 0; i < nombreDeJoueurs; i++)
@@ -15,7 +15,7 @@ public class Partie
             localJoueurs[i] = new Joueur(i + 1);
         }
         this.joueurs = localJoueurs;
-
+        // Initialisation des cartes et des piles.
         this.paquetCartes = Carte.CreerPaquetDeCartes();
         this.pileDeDepot = new Stack<Carte>();
         this.melanger(this.paquetCartes);
@@ -26,19 +26,19 @@ public class Partie
         this.idJoueurEnCours = random.Next(1, nombreDeJoueurs + 1);
 
     }
-    public int nombreDeJoueurs()
+    public int nombreDeJoueurs() // Retourne le nombre de joueurs
     {
         return this.joueurs.Length;
     }
 
-    public Joueur[] getJoueurs()
+    public Joueur[] getJoueurs() // Retourne le tableau des joueurs
     {
 
         return this.joueurs;
     }
 
 
-    private void melanger(List<Carte> paquetCartes)
+    private void melanger(List<Carte> paquetCartes) // Permet de melanger les cartes dans le paquet
     {
         Random random = new Random();
 
@@ -54,7 +54,7 @@ public class Partie
             paquetCartes[j] = temp;
         }
     }
-    public void distribuer()
+    public void distribuer()   // Distribue les cartes aux joueurs.
     {
         foreach (Joueur j in this.joueurs)
         {
@@ -65,15 +65,15 @@ public class Partie
         }
     }
 
-    public Stack<Carte> getPileDePioche()
+    public Stack<Carte> getPileDePioche() // Retourne la pile de pioche.
     {
         return this.pileDePioche;
     }
-    public Stack<Carte> getPileDeDepot()
+    public Stack<Carte> getPileDeDepot() // Retourne la pile de dépot.
     {
         return this.pileDeDepot;
     }
-    private void tourSuivant()
+    private void tourSuivant() // Permet de passer au tour du joueur suivant.
     {
         // Incrementer l'ID du joueur actuel
         idJoueurEnCours++;
@@ -85,7 +85,7 @@ public class Partie
         }
     }
 
-    private Joueur getJoueurParID(int id)
+    private Joueur getJoueurParID(int id) // Retourne le joueur correspondant à l'ID.
     {
         foreach (Joueur joueur in this.joueurs)
         {
@@ -96,11 +96,11 @@ public class Partie
         }
         return null;
     }
-    public int getIDJoueurEnCours()
+    public int getIDJoueurEnCours() // Retourne l'ID du joueur en cours.
     {
         return this.idJoueurEnCours;
     }
-    public void jouer()
+    public void jouer() // Gère le déroulement et la logique du jeu de pioche.
     {
         Joueur j = this.getJoueurParID(this.idJoueurEnCours);
         if (this.pileDeDepot.Count == 0)
@@ -113,6 +113,7 @@ public class Partie
             if (c == null) 
             {
                 if (this.pileDeDepot.Count == 0){
+                    Console.WriteLine("Pile de pioche vide, on mélange la pile de dépot en laissant la derniere carte joué dans cette dernière et on met le reste dans la pile de pioche.");
                     Carte ctop = this.pileDeDepot.Pop();
                     List<Carte> cartes = this.pileDeDepot.ToList();
                     this.melanger(cartes);
@@ -133,6 +134,7 @@ public class Partie
         }
         else
         {
+            Thread.Sleep(2000);
             Console.WriteLine("Le tour passera au joueur suivant");
             this.tourSuivant();
             this.jouer();

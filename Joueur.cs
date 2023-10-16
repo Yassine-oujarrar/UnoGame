@@ -18,26 +18,26 @@ public class Joueur
         this.ID = idJoueur;
         this.cartes = new List<Carte>(8);
     }
-    public string getFn()
+    public string getFn() // getteur de prénom du joueur
     {
         return fn;
     }
 
-    public string getLn()
+    public string getLn() //getteur de nom de famille du joueur
     {
         return ln;
     }
 
-    public int getID()
+    public int getID() // getteur de l'ID du joueur
     {
         return ID;
     }
-    public override string ToString()
+    public override string ToString() // afficher le nom complet du joueur
     {
         return this.fn + " " + this.ln;
     }
 
-    public Carte initierLeJeu()
+    public Carte initierLeJeu() // méthode pour initier le jeu en choisissant une carte au hasard parmi les cartes du joueur.
     {
         Random random = new Random();
         Carte carte = this.cartes[random.Next(0, 8)];
@@ -46,7 +46,7 @@ public class Joueur
         return carte;
     }
 
-    public Carte jouer(Carte carte)
+    public Carte jouer(Carte carte)  // Méthode permettant au joueur de jouer une carte basée sur une carte donnée.
     {   
         int size = this.cartes.Count;
         int i = 0;
@@ -64,7 +64,7 @@ public class Joueur
         return null;
     }
 
-    public void recevoirCarte(Carte carte)
+    public void recevoirCarte(Carte carte) // Méthode permettant au joueur de recevoir une carte.
     {
         Console.WriteLine("Le Joueur " + this.ToString() + " a reçu cette carte "+ carte.ToString());
         this.cartes.Add(carte);
