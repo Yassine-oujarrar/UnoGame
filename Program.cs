@@ -99,7 +99,7 @@
                 Console.WriteLine("---------");
                 sommet_depot = ajusterSommet(pile_depot, sommet_depot);
                 sommet_pioche = ajusterSommet(pile_pioche, sommet_pioche);
-                //Thread.Sleep(1000);
+                Thread.Sleep(1000);
             }
 
             Console.WriteLine("***FIN DE LA PARTIE***");
