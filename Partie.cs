@@ -1,4 +1,4 @@
-public class Partie
+public class Partie : Sujet
 {
     private Joueur[] joueurs;
     private List<Carte> paquetCartes;
@@ -24,7 +24,10 @@ public class Partie
         //Choisir un joueur qui commence le premier tour
         Random random = new Random();
         this.idJoueurEnCours = random.Next(1, nombreDeJoueurs + 1);
-
+        foreach (Joueur joueur in this.joueurs)
+            {
+                AjouterObservateur(joueur);
+            }
     }
     public int nombreDeJoueurs()
     {
@@ -103,6 +106,7 @@ public class Partie
     public void jouer()
     {
         Joueur j = this.getJoueurParID(this.idJoueurEnCours);
+        NotifierObservateurs(j); 
         if (this.pileDeDepot.Count == 0)
         {
             this.pileDeDepot.Push(j.initierLeJeu());
@@ -133,6 +137,7 @@ public class Partie
         }
         else
         {
+            Thread.Sleep(2000); // On attend 2 secondes avant de passer au tour suivant.
             Console.WriteLine("Le tour passera au joueur suivant");
             this.tourSuivant();
             this.jouer();

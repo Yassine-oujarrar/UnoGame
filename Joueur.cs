@@ -1,6 +1,6 @@
 using System;
 
-public class Joueur
+public class Joueur : Sujet, PatronObservateur
 {
     public List<Carte> cartes;
     private string fn;
@@ -43,6 +43,7 @@ public class Joueur
         Carte carte = this.cartes[random.Next(0, 8)];
         this.cartes = this.cartes.Where(c => c != carte).ToList();
         Console.WriteLine("Le Joueur "+ this.ToString() + " a initié le jeu avec cette carte " + carte.ToString());
+        Console.WriteLine();
         return carte;
     }
 
@@ -58,6 +59,7 @@ public class Joueur
         {
             Carte cartejoue = this.cartes[i];
             Console.WriteLine("Le Joueur "+ this.ToString() + " a joué cette carte " + cartejoue.ToString());
+            Console.WriteLine();
             this.cartes = this.cartes.Where(c => c != cartejoue).ToList();
             return cartejoue;
         }
@@ -67,7 +69,15 @@ public class Joueur
     public void recevoirCarte(Carte carte)
     {
         Console.WriteLine("Le Joueur " + this.ToString() + " a reçu cette carte "+ carte.ToString());
+        Console.WriteLine();
         this.cartes.Add(carte);
     }
-
+        public void Notificateur(Joueur joueurActuel)
+        {
+            if (this == joueurActuel)
+            {
+             Console.WriteLine("C'est le tour de " + this.ToString() + " de jouer!");
+             Console.WriteLine();
+        }
+        }
 }
