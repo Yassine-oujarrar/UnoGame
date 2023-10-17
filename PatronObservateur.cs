@@ -1,3 +1,4 @@
+// création de l'interface patron observateur 
 public interface PatronObservateur
 {
     void Notificateur(Joueur joueurActuel);
