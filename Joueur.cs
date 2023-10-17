@@ -35,7 +35,7 @@ namespace Devoir1
         public Carte jouer(Carte[] pile_depot, int sommetD, Carte[] pile_pioche, int sommetP)
         {
             bool doitPiocher = true;
-            /*
+
             foreach (Carte carte in main_du_joueur)
             {
                 if (carte.getValeur() == pile_depot[sommetD].getValeur() || carte.getCouleur() == pile_depot[sommetD].getCouleur())
@@ -46,7 +46,7 @@ namespace Devoir1
                     doitPiocher = false;
                     break;
                 }
-            }*/
+            }
             if (doitPiocher) 
             {
                 piocher(pile_pioche, sommetP);
